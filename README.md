@@ -7,11 +7,11 @@
 ### 1. 자료구조  
 ### 2. 알고리즘  
 ### 3. 유형별 문제풀이  
-|No|문제명|비고|
-|:---:|:---:|:---:|
-|1|음계|https://www.acmicpc.net/problem/2920|
-|2|블랙잭|https://www.acmicpc.net/problem/2798|
-|3|스택수열|https://www.acmicpc.net/problem/1874|
+|No|문제명|비고|다시풀어보기|
+|:---:|:---:|:---:|:---:|
+|1|음계|https://www.acmicpc.net/problem/2920||
+|2|블랙잭|https://www.acmicpc.net/problem/2798||
+|3|스택수열|https://www.acmicpc.net/problem/1874|다시|
 
 ## diary  
 2021-01-28 : 음계, 블랙잭, 스택수열
