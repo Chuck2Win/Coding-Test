@@ -10,7 +10,7 @@
 |No|문제명|비고|
 |:---:|:---:|:---:|
 |1|음계|https://www.acmicpc.net/problem/2920|
+|2|블랙잭|https://www.acmicpc.net/problem/2798|
 
 ## diary  
-5.14 : hash, recursive를 활용해 인적 네트워크 문제 해결
-5.26 : Dijstra algorithm (initial, second version)
+2021-01-28 : 음계, 블랙잭
