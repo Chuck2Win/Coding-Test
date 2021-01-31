@@ -12,8 +12,8 @@
 |1|음계|https://www.acmicpc.net/problem/2920||
 |2|블랙잭|https://www.acmicpc.net/problem/2798||
 |3|스택수열|https://www.acmicpc.net/problem/1874|다시|
-|4|조합|https://velog.io/@jiffydev/algo-52||
-|5|순열|https://velog.io/@jiffydev/algo-52||
+|4|조합|https://velog.io/@jiffydev/algo-52|https://github.com/Chuck2Win/Coding-Test/blob/master/DFS%2CBFS.ipynb|
+|5|순열|https://velog.io/@jiffydev/algo-52|https://github.com/Chuck2Win/Coding-Test/blob/master/DFS%2CBFS.ipynb|
 ## diary  
 2021-01-28 : 음계, 블랙잭, 스택수열
 2021-01-29 : heap 정리
