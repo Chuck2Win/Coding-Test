@@ -15,8 +15,10 @@
 |4|조합|https://velog.io/@jiffydev/algo-52|https://github.com/Chuck2Win/Coding-Test/blob/master/DFS%2CBFS.ipynb||
 |5|순열|https://velog.io/@jiffydev/algo-52|https://github.com/Chuck2Win/Coding-Test/blob/master/DFS%2CBFS.ipynb||
 |6|NQUEEN||BackTracking|
+|7|여행경로|https://programmers.co.kr/learn/courses/30/lessons/43164#|DFS or Back Tracking|
 ## diary  
 2021-01-28 : 음계, 블랙잭, 스택수열
 2021-01-29 : heap 정리
 2021-01-31 : bfs로 순열, 조합 도전  
 2021-02-01 : backtranking
+2021-02-02 : dfs
