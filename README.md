@@ -19,6 +19,13 @@
 |8|네트워크|https://programmers.co.kr/learn/courses/30/lessons/43162||
 |9|소수찾기|https://programmers.co.kr/learn/courses/30/lessons/42839||
 |10|N으로 표현|https://programmers.co.kr/learn/courses/30/lessons/42895|X||
+|11|베스트앨범|https://programmers.co.kr/learn/courses/30/lessons/42579||HASH|
+|12|이분그래프|백준1707|시간초과...|graph, if|
+|13|N과M(2)|백준15650||dfs_조합|
+|14|날짜계산|백준1476|bruteforce||
+|15|중복조합, 중복순열|개인|||
+|16|숫자만들기|SWEA4008|같은 것이 들어있는 순열||
+||||||
 ## diary  
 
 2021-01-28 : 음계, 블랙잭, 스택수열
@@ -27,3 +34,4 @@
 2021-02-01 : backtranking
 2021-02-02 : 여행경로, 네트워크
 2021-02-05 : 소수 찾기, N으로 표현
+20021-02-09 : 베스트 앨범, 이분 그래프, N과M(2), 숫자 만들기, 중복 조합, 같은 것이 들어 있는 순열
