@@ -70,3 +70,38 @@ for i in range(1,N+1):
 | 4    | 0     |      |      |              |                   |       |                  |                   |      |
 |      |       |      |      |              |                   |       |                  |                   |      |
 
+
+
+# 기타리스트
+
+https://www.acmicpc.net/problem/1495
+
+존재여부만을 check
+
+|      | 0    | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 10   |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| 0    | 0    | 0    | 0    | 0    | 0    | 1    | 0    | 0    | 0    | 0    | 0    |
+| 1    | 1    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 1    |
+| 2    | 0    | 0    | 0    | 1    | 0    | 0    | 0    | 1    | 0    | 0    | 0    |
+| 3    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 0    | 1    |
+
+N=3, S=5,M=10
+
+[3,5,7]
+
+```python
+N,S,M = map(int,input().split())
+V = list(map(int,input().split()))
+table = [[0 for _ in range(M+1)] for _ in range(N+1)]
+table[0][S]=1
+for i in range(0,N):
+	for j in range(0,M):
+	    if table[i][j]:
+            if 0<=j-V[i+1]<=M:
+                table[i+1][j-V[i+1]]=1
+            if 0<=j+V[i+1]<=M::
+                table[i+1][j+V[i+1]]=1
+```
+
+
+
