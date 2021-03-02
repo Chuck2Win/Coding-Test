@@ -1,0 +1,67 @@
+def calc(previous,idx,sym,num):
+    # idx는 symbol에서의 idx임
+    if sym[idx]=='+':
+        s=previous+num[idx+1]
+    elif sym[idx]=='-':
+        s=previous-num[idx+1]
+        
+    elif sym[idx]=='*':
+        s=previous*num[idx+1]
+    return s
+from collections import deque
+def dfs_comb(k,sym):
+    visited=[]
+    idx = list(range(len(sym)))
+    next_visit=deque([[_] for _ in range(len(idx)-k+1)])
+    while next_visit:
+        next = next_visit.pop()
+        if len(next)==k:
+            visited.append(next)
+        else:
+            if next[-1]+2<len(idx):
+                for i in range(next[-1]+2,len(idx)):
+                    next_visit.append(next+[i])
+    return visited
+def calculation(sym,num):
+    s=num[0]
+    idx=0
+    while True:
+        if idx==len(sym):
+            break
+        else:
+            s=calc(s,idx,sym,num)
+            idx+=1
+    return s
+def solution(N,equation):
+    num=[]
+    sym=[]
+    for i in equation:
+        if i not in ['+','-','*']:
+            num.append(int(i))
+        else:
+            sym.append(i)
+    result=[]
+    for i in range(N//2):
+        result.extend(dfs_comb(i,sym))
+    answer=[]
+    answer.append(calculation(sym,num))
+    for i in result:
+        new_num=[]
+        new_sym=[sym[_] for _ in range(len(sym)) if _ not in i]
+        idx=0
+        while True:
+            if idx>=len(num):
+                break
+            else:
+                if idx in i:
+                    new_num.append(calc(num[idx],idx,sym,num))
+                    idx+=2
+
+                else:
+                    new_num.append(num[idx])   
+                    idx+=1
+        answer.append(calculation(new_sym,new_num))
+    return max(answer)
+N = int(input())
+equation = input()
+print(solution(N,equation))
