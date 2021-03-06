@@ -1,0 +1,28 @@
+import sys
+from collections import deque
+T = int(sys.stdin.readline())
+for t in range(T):
+    N,K = map(int,sys.stdin.readline().split())
+    D = list(map(int,sys.stdin.readline().split()))
+    graph = {}
+    for i in range(K):
+        x,y = map(int,sys.stdin.readline().split())
+        if graph.get(y):
+            graph[y].append(x)
+        else:
+            graph[y]=[x]
+    W = int(sys.stdin.readline())
+    visited=0
+    next_visit=deque([W])
+    while next_visit:
+        #step마다 최대값 찾아주기
+        m = -1
+        for _ in range(len(next_visit)):
+            next=next_visit.popleft()
+            if m<D[next-1]:
+                m = D[next-1]
+            if graph.get(next):
+                for i in graph[next]:
+                    next_visit.append(i)
+        visited += m 
+    print(visited)
