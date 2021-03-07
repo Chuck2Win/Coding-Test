@@ -1,0 +1,37 @@
+from collections import deque
+def solution(N,M,Map):
+    
+    # O(N*N)
+    answer=[]
+    for i in range(N):
+        for j in range(N):
+            table = [[0 for _ in range(N)] for _ in range(N)]
+            visited=[]
+            table[i][j]=1
+            next_visit=deque([(i,j)]) # 모든 지점이 start가 가능.. N*N
+            # 시간 복잡도 N*N*4
+            cnt = 0
+            k = 1
+            profit=0
+            # depth N(1,2,..N), breath : (1*2-0*2,...,N*2-(N-1)*2) => N**2 
+            while next_visit:
+                for _ in range(len(next_visit)):
+                    next = next_visit.popleft()
+                    r,c = next
+                    if Map[r][c]==1:
+                        profit+=M
+                        cnt+=1
+                    for dr,dc in [(+1,0),(-1,0),(0,+1),(0,-1)]:
+                        new_r = r+dr
+                        new_c = c+dc
+                        if 0<=new_r<N and 0<=new_c<N and table[new_r][new_c]==0:
+                            next_visit.append((new_r,new_c))
+                            table[new_r][new_c]=1
+                if profit-((k)**2+(k-1)**2)>=0:
+                    visited.append(cnt) 
+                k+=1
+            if visited:
+                answer.append(max(visited))
+            
+
+    return max(answer)
