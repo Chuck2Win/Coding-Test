@@ -1,0 +1,99 @@
+# 주사위 굴릭
+# 시뮬레이션
+# 구현만 하면 되는 듯
+# 백준 14499
+import sys
+N,M,x,y,K = map(int,sys.stdin.readline().split())
+Map=[]
+for i in range(N):
+    Map.append(list(map(int,sys.stdin.readline().split())))
+order = list(map(int,sys.stdin.readline().split()))
+
+dice =[[0,0,0,0],[0,0,0,0]]
+current = (x,y)
+for i in order:
+    if i==4: # 남
+        # 칸이 내부인지 확인
+        if 0<=current[0]+1<N and 0<=current[1]<M:
+            a=dice[1].pop()
+            dice[1]=[a]+dice[1]
+            # current update
+            current = (current[0]+1,current[1])
+#             print(current)
+            if Map[current[0]][current[1]]==0:
+                Map[current[0]][current[1]]=dice[1][-1]
+            else:
+                dice[1][-1]=Map[current[0]][current[1]]
+                Map[current[0]][current[1]]=0
+            # 맨 위 , 맨 아래 업데이트(여기는 겹치기에)
+            dice[0][1]=dice[1][1]
+            dice[0][-1]=dice[1][-1]
+            #print('dice')
+            #print(dice)
+            #print('Map')
+            #print(Map)
+            print(dice[1][1])
+            
+            # 이동한 칸의 수 0 => 바닥면에 쓰인 수가 칸에 복사
+            # 이동한 칸의 수 != 0 => 칸에 쓰여있는 수가 주사위 바닥면, 칸 수 0 
+    elif i==3: # 북
+        # 칸이 내부인지 확인
+        if 0<=current[0]-1<N and 0<=current[1]<M:
+            a=dice[1].pop(0)
+            dice[1]=dice[1]+[a]
+            current = (current[0]-1,current[1])
+#             print(current)
+            if Map[current[0]][current[1]]==0:
+                Map[current[0]][current[1]]=dice[1][-1]
+            else:
+                dice[1][-1]=Map[current[0]][current[1]]
+                Map[current[0]][current[1]]=0
+            dice[0][1]=dice[1][1]
+            dice[0][-1]=dice[1][-1]
+            #print('dice')
+#             print(dice)
+#             print('Map')
+#             print(Map)
+            print(dice[1][1])
+            
+    elif i==2: # 서
+        # 칸이 내부인지 확인
+        if 0<=current[0]<N and 0<=current[1]-1<M:
+            a=dice[0].pop(0)
+            dice[0]=dice[0]+[a]
+            current = (current[0],current[1]-1)
+#             print(current)
+            if Map[current[0]][current[1]]==0:
+                Map[current[0]][current[1]]=dice[0][-1]
+            else:
+                dice[0][-1]=Map[current[0]][current[1]]
+                Map[current[0]][current[1]]=0
+            dice[1][1]=dice[0][1]
+            dice[1][-1]=dice[0][-1]
+#             print('dice')
+#             print(dice)
+#             print('Map')
+#             print(Map)
+            print(dice[1][1])
+            
+    else: # 동
+        if 0<=current[0]<N and 0<=current[1]+1<M:
+        # 칸이 내부인지 확인
+            a=dice[0].pop()
+            dice[0]=[a]+dice[0]
+            current = (current[0],current[1]+1)
+#             print(current)
+            if Map[current[0]][current[1]]==0:
+                Map[current[0]][current[1]]=dice[0][-1]
+            else:
+                dice[0][-1]=Map[current[0]][current[1]]
+                Map[current[0]][current[1]]=0
+            dice[1][1]=dice[0][1]
+            dice[1][-1]=dice[0][-1]
+#             print('dice')
+#             print(dice)
+#             print('Map')
+#             print(Map)
+            print(dice[1][1])
+            
+    
