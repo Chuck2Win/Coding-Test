@@ -1,0 +1,18 @@
+# case
+#i번째 선택 X : table[i-1]  
+#i번째 선택 , i-1번째도 선택 : P[i],P[i-1],table[i-3]  
+#i번째 선택 , i-1번째 선택 x : P[i],table[i-2]    
+#i번째 선택, i-2번째 선택 : P[i],P[i-2],table[i-4]  
+#i번째 선택, i-2번째 선택 x : P[i],table[i-3]  
+def dp(N,P):
+    table = [0 for _ in range(N+2)]
+    if N==1:
+        return P[0]
+    elif N==2:
+        return P[1]+P[0]
+    else:
+        table[2]=P[0]
+        table[3]=P[0]+P[1]
+        for i in range(4,N+2):
+            table[i]=max(table[i-1],P[i-2]+P[i-1-2]+table[i-3],P[i-2]+table[i-2],P[i-2]+P[i-2-2]+table[i-4],P[i-2]+table[i-3])
+        return table[-1]        
