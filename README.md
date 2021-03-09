@@ -48,6 +48,9 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |42|홈방범서비스|SWEA2117|BFS||  
 |43|포도주|백준2156|DP||  
 |44|주사위 굴리기|백준14499|시뮬레이션|첫 시뮬레이션 ㅎㅎ 구현만 하면 될듯|  
+|45|큐빙|백준5373|시뮬레이션|이거.. 극혐.. 재도전..|  
+|46|MinMaxDivision|코딜리티|이진검색|DFS로 해서 시간초과|  
+
 ||
 
 
@@ -68,6 +71,8 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |39|퇴사2|백준14501|DP|퇴사 또 못함..|
 |40|리모컨|백준1107|BF|BF의 끝판왕인듯|  
 |41|집합|백준11723|BF|set이 무겁다고 함.|  
+|45|큐빙|백준5373|시뮬레이션|이거.. 극혐.. 재도전..|  
+|46|MinMaxDivision|코딜리티|이진검색|DFS로 해서 시간초과|  
 
 ## diary  
 
@@ -90,4 +95,4 @@ confer : sys.stdin.readline(), sys.stdin.write()
 2021-03-05 : 리모컨(78%에서..+시간복잡도+시간capa 고려하는법을 익힘), stdin.readline()의 경우 여러 줄을 input으로 받을 때 좋다고함!  
 2021-03-06 : stdout.write()가 print보다 빠르다고함. ACM Craft(못품), 퇴사2(완료), 집합  
 2021-03-07 : 홈방범서비스  
-2021-03-09 : 포도주, 주사위 굴리기,    
+2021-03-09 : 포도주, 주사위 굴리기, 큐빙(실패), 이진검색, MinMaxDivision(실패)     
