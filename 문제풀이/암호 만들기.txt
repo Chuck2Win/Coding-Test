@@ -1,0 +1,41 @@
+import sys
+L,C = map(int,sys.stdin.readline().split())
+A = list(sys.stdin.readline().split())
+Mo = ['a','e','i','o','u']
+from collections import deque
+def dfs_comb(array,r):
+    visited=[]
+    idx = list(range(len(array)))
+    next_visit=deque([[_] for _ in range(len(idx)-r+1)])
+    while next_visit:
+        next = next_visit.pop()
+        if len(next)==r:
+            visited.append([array[i] for i in next])
+        else:
+            for i in range(next[-1],len(idx)):
+                if i not in next:
+                    next_visit.append(next+[i])
+    return visited
+def solution(L,C,A):
+    mo = [i for i in A if i in Mo] # 6C
+    ja = [i for i in A if i not in Mo]
+    answer=[]
+    for i in range(1,len(mo)+1):
+        len_ja = L-i
+        if L-i>1:
+            mo_visited=dfs_comb(mo,i)
+            ja_visited=dfs_comb(ja,len_ja)
+            for a in mo_visited:
+                for b in ja_visited:
+                    answer.append(sorted(a+b))
+    return answer
+answer = solution(L,C,A)
+Answer=[]
+for i in answer:
+    s=''
+    for j in i:
+        s+=j
+    Answer.append(s)
+Answer=sorted(Answer)
+for i in Answer:
+    print(i)
