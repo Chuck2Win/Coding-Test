@@ -1,0 +1,34 @@
+import sys
+# 시간 복잡도 3**N....
+N,M = map(int,input().split())
+Map = []
+for i in range(N):
+    Map.append(list(map(int,input().split())))
+from collections import deque
+next_visit=deque([(0,0)])
+table = [[Map[i][j] for j in range(M)] for i in range(N)]
+while next_visit:
+    for i in range(len(next_visit)):
+        next = next_visit.popleft()
+        r,c = next
+        for dr,dc in [(1,0),(0,1),(1,1)]:
+            new_r = r+dr
+            new_c = c+dc
+            if 0<=new_r<N and 0<=new_c<M:
+                table[new_r][new_c]=max(table[new_r][new_c],table[r][c]+Map[new_r][new_c])
+                next_visit.append((new_r,new_c))
+print(table[-1][-1])
+
+# dp - 시간 복잡도 M,N
+table = [[Map[i][j] for j in range(M)] for i in range(N)]
+
+for j in range(1,M):
+    table[0][j]=table[0][j-1]+Map[0][j]
+
+for i in range(1,N):
+    table[i][0]=table[i-1][0]+Map[i][0]
+    
+for i in range(1,N):
+    for j in range(1,M):
+        table[i][j]=max(table[i-1][j]+Map[i][j],table[i][j-1]+Map[i][j],table[i-1][j-1]+Map[i][j])
+print(table[-1][-1])
