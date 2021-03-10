@@ -51,7 +51,9 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |45|큐빙|백준5373|시뮬레이션|이거.. 극혐.. 재도전..|  
 |46|MinMaxDivision|코딜리티|이진검색|DFS로 해서 시간초과|  
 |47|CyclicRotation|코딜리티|array||  
-|48|암호 만들기|백준1759|BF||    
+|48|암호 만들기|백준1759|BF||   
+|49|가장 큰 증가하는 부분 수열|백준11055|DP|가장 긴 증가하는 부분 수열의 변형|   
+
 
 ||
 
@@ -98,4 +100,4 @@ confer : sys.stdin.readline(), sys.stdin.write()
 2021-03-06 : stdout.write()가 print보다 빠르다고함. ACM Craft(못품), 퇴사2(완료), 집합  
 2021-03-07 : 홈방범서비스  
 2021-03-09 : 포도주, 주사위 굴리기, 큐빙(실패), 이진검색, MinMaxDivision(실패)     
-2021-03-10 : Cyclic rotation, 암호만들기  
+2021-03-10 : Cyclic rotation, 암호만들기, 가장 큰 증가하는 부분 수열    
