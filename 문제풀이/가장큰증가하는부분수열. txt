@@ -1,0 +1,11 @@
+# 백준 11055
+N = int(input())
+A = list(map(int,input().split()))
+table = A[:]
+for i in range(1,N):
+    for j in range(i):
+        if A[i]>A[j]:
+            table[i]=max(table[j]+A[i],table[i])
+print(max(table))
+# 시간복잡도 N^2
+    
