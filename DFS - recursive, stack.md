@@ -18,6 +18,6 @@ def recursive(data):
         print('returned',data)
 ```
 
-![312](G:\github\Coding-Test\img\312.png)
+![312](https://github.com/Chuck2Win/Coding-Test/blob/master/img/312.png)
 
-![3121](G:\github\Coding-Test\img\3121.png)
+![3121](https://github.com/Chuck2Win/Coding-Test/blob/master/img/3121.png)
