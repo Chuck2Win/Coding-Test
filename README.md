@@ -55,6 +55,8 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |49|가장 큰 증가하는 부분 수열|백준11055|DP|가장 긴 증가하는 부분 수열의 변형|   
 |50|이동|백준11048|BFS를 가장한 DP문제|  
 |51|OddOccurrencesInArray|코딜리티|배열+Dict|    
+|52|OddOccurrencesInArray|코딜리티|배열+Dict|    
+
 
 
 ||
@@ -62,11 +64,10 @@ confer : sys.stdin.readline(), sys.stdin.write()
 
 
 
-## 다시 풀 문제(오답)
+## 다시 풀 문제(오답) ☑️
 |No|문제명|비고|다시풀어보기|
 |:---:|:---:|:---:|:---:|
 |28|가장 높은 탑 쌓기|백준2655||도전|
-|27|평범한 배낭|백준12865|DP|DP의 기본|
 |29|기타리스트|백준1495|DP|one hot coding 느낌|
 |30|탈출|백준3055|BFS+DPS||
 |31|최고의 집합|프로그래머스|수학적접근||
@@ -79,7 +80,7 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |41|집합|백준11723|BF|set이 무겁다고 함.|  
 |45|큐빙|백준5373|시뮬레이션|이거.. 극혐.. 재도전..|  
 |46|MinMaxDivision|코딜리티|이진검색|DFS로 해서 시간초과|  
-
+|27|평범한 배낭|백준12865|DP|왜 2차원 배열을 쓰는지 알게됨.|  
 ## diary  
 
 2021-01-28 : 음계, 블랙잭, 스택수열  
@@ -103,4 +104,4 @@ confer : sys.stdin.readline(), sys.stdin.write()
 2021-03-07 : 홈방범서비스  
 2021-03-09 : 포도주, 주사위 굴리기, 큐빙(실패), 이진검색, MinMaxDivision(실패)     
 2021-03-10 : Cyclic rotation, 암호만들기, 가장 큰 증가하는 부분 수열, 이동
-2021-03-11 : OddOccurrencesInArray  
+2021-03-11 : OddOccurrencesInArray, 평범함배낭 재도전(실패.. 왜 2차원 배열을 쓰는지 알게됬음)  
