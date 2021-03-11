@@ -1,0 +1,59 @@
+import sys
+N,M = map(int,sys.stdin.readline().split())
+Map = []
+for i in range(N):
+    Map.append(list(map(int,sys.stdin.readline().split())))
+zeros=[]
+two=[]
+for i in range(N):
+    for j in range(M):
+        if Map[i][j]==0:
+            zeros.append((i,j))
+        elif Map[i][j]==2:
+            two.append((i,j))
+from collections import deque
+from collections import deque
+def dfs_comb(Map,zeros):
+    visited=[]
+    next_visit=deque([[_] for _ in zeros])
+    while next_visit:
+        next = next_visit.pop()
+        if len(next)==3:
+            visited.append(next)
+        else:
+            for i in zeros:
+                if i not in next:
+                    next_visit.append(next+[i])
+    return visited
+            
+def bfs(new_Map,two):
+    next_visit=deque([_ for _ in two])
+    while next_visit:
+        for _ in range(len(next_visit)):
+            next = next_visit.popleft()
+            r,c = next
+            for dr,dc in [(1,0),(0,1),(-1,0),(0,-1)]:
+                new_r = r+dr
+                new_c = c+dc
+                if 0<=new_r<N and 0<=new_c<M:
+                    if new_Map[new_r][new_c]==0:
+                        new_Map[new_r][new_c]=2
+                        next_visit.append((new_r,new_c))
+    return new_Map
+def solution(N,M,Map,zeros,two):
+    new_Maps = dfs_comb(Map,zeros) # 시간 복잡도 (NM)**4 : 2*24
+    answer=[]
+    for new_two in new_Maps: # (NM)**3 * M**2 = 64**3*64 = 2의 30승..
+        new_Map = [[Map[i][j] for j in range(M)] for i in range(N)]
+        for i in new_two:
+            new_Map[i[0]][i[1]]=1
+        
+        update_new_Map = bfs(new_Map,two)
+        cnt=0
+        for i in range(N):
+            for j in range(M):
+                if update_new_Map[i][j]==0:
+                    cnt+=1
+        answer.append(cnt)
+    return max(answer)
+print(solution(N,M,Map,zeros,two))   
