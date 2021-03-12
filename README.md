@@ -55,7 +55,12 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |49|가장 큰 증가하는 부분 수열|백준11055|DP|가장 긴 증가하는 부분 수열의 변형|   
 |50|이동|백준11048|BFS를 가장한 DP문제|  
 |51|OddOccurrencesInArray|코딜리티|배열+Dict|    
-|52|OddOccurrencesInArray|코딜리티|배열+Dict|    
+|52|연구소|백준14502|DFS+BFS|   
+|53|야근지수|프로그래머스|heap|  
+
+|54|풍선터트리기|프로그래머스|중|    
+|55|섬연결하기|프로그래머스|중|   
+
 
 
 
@@ -104,4 +109,7 @@ confer : sys.stdin.readline(), sys.stdin.write()
 2021-03-07 : 홈방범서비스  
 2021-03-09 : 포도주, 주사위 굴리기, 큐빙(실패), 이진검색, MinMaxDivision(실패)     
 2021-03-10 : Cyclic rotation, 암호만들기, 가장 큰 증가하는 부분 수열, 이동
-2021-03-11 : OddOccurrencesInArray, 평범함배낭 재도전(실패.. 왜 2차원 배열을 쓰는지 알게됬음)  
+2021-03-11 : OddOccurrencesInArray, 평범함배낭 재도전(실패.. 왜 2차원 배열을 쓰는지 알게됬음),연구소  
+2021-03-12 : 야근지수, 풍선터트리기, 섬연결하기  
+
+
