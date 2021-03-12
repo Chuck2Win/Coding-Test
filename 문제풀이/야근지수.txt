@@ -1,0 +1,33 @@
+# 프로그래머스
+
+def score(works):
+    s = 0
+    for i in range(len(works)):
+        s+=works[i]**2
+    return s
+# 시간 복잡도 : N*(LlogL)
+def solution(n, works):
+    L = len(works)
+    if sum(works)<=n:
+        return 0
+    for i in range(n): # n
+        m=max(list(range(len(works))),key = lambda i : works[i]) # LlogL
+        works[m]=works[m]-1
+    answer = score(works)
+    return answer
+import heapq
+# 시간복잡도 : NlogL
+def solution(n, works):
+    L = len(works)
+    if sum(works)<=n:
+        return 0
+    h = []
+    for i in works:
+        heapq.heappush(h,(-i,i))
+    # L logL
+    for j in range(n): # n
+        m = heapq.heappop(h)[1]
+        m = m-1
+        heapq.heappush(h,(-m,m)) # log L
+    answer = score([i[1] for i in h])
+    return answer
