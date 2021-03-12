@@ -18,8 +18,7 @@
 
 2) 우선 순위 큐에 원소를 넣고 삭제 : E * 비교 연산 logE :arrow_right: O(ElogE)
 
-- E의 max값 $2*C^V_2$
-
+- E의 max값 : VC2  
 보통 E<=V이므로,  O(ElogV)
 
 그리고, BFS에서 Edge는 Depth와 Breadth를 계산한 느낌이라고 생각하면 됨.
@@ -46,7 +45,7 @@ def dijstra(graph,start):
         print(distance)
         cur_distance, cur_point = heapq.heappop(next_visit) 
         # 만약 지금 꺼낸 것보다 짧은 경로를 안다면 무시!
-        # 여기에, 이미 방문한 node에 대한 부분이 처리된다.
+        # 여기에, 이미 방문한 node에 대한 부분이 처리된다.(가중치가 양수인 것이 포인트)
         # 이 비교를 하는 까닭은, 갱신되기 전의 값이 있을 수도 있기에.
         if cur_distance>distance[cur_point]: # 이 연산이 결국 E만큼 일어날 것임.
             continue
