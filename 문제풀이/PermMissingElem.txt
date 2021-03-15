@@ -1,0 +1,21 @@
+# PermMissingElem(다시 풀어보자)
+def solution(A):
+    A = sorted(A) # NlogN # 차가 1이 아니면 ㅇㅇ
+    N = len(A)
+    if N==0:
+        return 1
+    elif N==1:
+        for i in [1,2]:
+            if i!=A[0]:
+                return i
+
+    else:
+        # 처음과 끝 값이 빠지게 되었을 때
+        if A[0]!=1:
+            return 1
+        else:
+            for i in range(N-1):
+                if A[i+1]-A[i]!=1:
+                    return A[i]+1
+            # 맨 끝 값
+            return N+1
