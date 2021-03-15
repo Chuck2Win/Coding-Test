@@ -1,0 +1,27 @@
+# TapeEquilibrium
+def solution(A):
+    # O(N) or O(NlogN)
+    N = len(A)
+    S = sum(A)
+    values=[]
+    min_value = float('inf')
+    for i in range(1,N): #O(N**2)
+        a = sum(A[:i]) 
+        b = S - a 
+        if min_value>abs(a-b):
+            min_value = abs(a-b)
+    #print(min_value)  
+    return min_value 
+#O(N)
+def solution(A):
+    # write your code in Python 3.6
+    N = len(A)
+    S = sum(A)
+    table = [0,S]
+    min_value = float('inf')
+    for i in range(N-1): # O(N**2)
+        table[0]+=A[i]
+        table[1]-=A[i]
+        if abs(table[0]-table[1])<min_value:
+            min_value = abs(table[0]-table[1])
+    return min_value
