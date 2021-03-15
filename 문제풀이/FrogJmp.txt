@@ -1,0 +1,11 @@
+# FrogJmp
+def solution(X, Y, D):
+    # 목표 O(N)
+    if Y==X:
+        return 0
+    else:
+        a = Y-X
+        if a%D==0:
+            return a//D
+        else:
+            return a//D + 1
