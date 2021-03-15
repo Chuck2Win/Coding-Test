@@ -57,9 +57,12 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |51|OddOccurrencesInArray|코딜리티|배열+Dict|    
 |52|연구소|백준14502|DFS+BFS|   
 |53|야근지수|프로그래머스|heap|  
+|54|FrogJmp|코딜리티|array|      
+|55|PermMissingElem|코딜리티|array|      
+|56|TapeEquilibrium|코딜리티|array|      
 
-|54|풍선터트리기|프로그래머스|중|    
-|55|섬연결하기|프로그래머스|중|   
+~~|54|풍선터트리기|프로그래머스|중|~~
+~~|55|섬연결하기|프로그래머스|중|~~   
 
 
 
@@ -86,6 +89,7 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |45|큐빙|백준5373|시뮬레이션|이거.. 극혐.. 재도전..|  
 |46|MinMaxDivision|코딜리티|이진검색|DFS로 해서 시간초과|  
 |27|평범한 배낭|백준12865|DP|왜 2차원 배열을 쓰는지 알게됨.|  
+|57|아기상어|백준16236|BFS+시뮬레이션|문제 3번 읽자|    
 ## diary  
 
 2021-01-28 : 음계, 블랙잭, 스택수열  
@@ -110,6 +114,11 @@ confer : sys.stdin.readline(), sys.stdin.write()
 2021-03-09 : 포도주, 주사위 굴리기, 큐빙(실패), 이진검색, MinMaxDivision(실패)     
 2021-03-10 : Cyclic rotation, 암호만들기, 가장 큰 증가하는 부분 수열, 이동
 2021-03-11 : OddOccurrencesInArray, 평범함배낭 재도전(실패.. 왜 2차원 배열을 쓰는지 알게됬음),연구소  
-2021-03-12 : 야근지수, 풍선터트리기, 섬연결하기  
+2021-03-12 : 야근지수, ~~풍선터트리기, 섬연결하기  ~~
+2021-03-13 : 네이버 코딩테스트  
+2021-03-14 : 아기상어(재도전요)  
+2021-03-16 : FrogJmp,PermMissingElem,TapeEquilibrium(시간복잡도)  
+
+
 
 
