@@ -1,0 +1,17 @@
+# FrogRiverOne
+def solution(X, A):
+    check = [0 for _ in range(X)]
+    for i in range(len(A)): # O(NX)
+        check[A[i]-1]=1
+        if sum(check)==X:
+            return i
+    return -1
+
+def solution(X, A):
+    # write your code in Python 3.6
+    check = set()
+    for i in range(len(A)): # O(N)
+        check.add(A[i])
+        if len(check)==X: 
+            return i
+    return -1
