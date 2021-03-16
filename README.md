@@ -53,13 +53,15 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |47|CyclicRotation|코딜리티|array||  
 |48|암호 만들기|백준1759|BF||   
 |49|가장 큰 증가하는 부분 수열|백준11055|DP|가장 긴 증가하는 부분 수열의 변형|   
-|50|이동|백준11048|BFS를 가장한 DP문제|  
-|51|OddOccurrencesInArray|코딜리티|배열+Dict|    
-|52|연구소|백준14502|DFS+BFS|   
-|53|야근지수|프로그래머스|heap|  
-|54|FrogJmp|코딜리티|array|      
-|55|PermMissingElem|코딜리티|array|      
-|56|TapeEquilibrium|코딜리티|array|      
+|50|이동|백준11048|BFS를 가장한 DP문제||      
+|51|OddOccurrencesInArray|코딜리티|배열+Dict||       
+|52|연구소|백준14502|DFS+BFS||      
+|53|야근지수|프로그래머스|heap||     
+|54|FrogJmp|코딜리티|array||         
+|55|PermMissingElem|코딜리티|array||        
+|56|TapeEquilibrium|코딜리티|array||        
+|57|FrogRiverOne|코딜리티|array||        
+|58|MaxCounters|코딜리티|array|max의 시간복잡도 O(N), 진짜 최악의경우|          
 
 ~~|54|풍선터트리기|프로그래머스|중|~~
 ~~|55|섬연결하기|프로그래머스|중|~~   
@@ -117,7 +119,7 @@ confer : sys.stdin.readline(), sys.stdin.write()
 2021-03-12 : 야근지수, ~~풍선터트리기, 섬연결하기  ~~
 2021-03-13 : 네이버 코딩테스트  
 2021-03-14 : 아기상어(재도전요)  
-2021-03-16 : FrogJmp,PermMissingElem,TapeEquilibrium(시간복잡도)  
+2021-03-16 : FrogJmp,PermMissingElem,TapeEquilibrium(시간복잡도),MaxCounters(진짜 최악으로만 구성된 경우), FrogRiverOne    
 
 
 
