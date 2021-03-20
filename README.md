@@ -61,7 +61,13 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |55|PermMissingElem|코딜리티|array||        
 |56|TapeEquilibrium|코딜리티|array||        
 |57|FrogRiverOne|코딜리티|array||        
-|58|MaxCounters|코딜리티|array|max의 시간복잡도 O(N), 진짜 최악의경우|          
+|58|MaxCounters|코딜리티|array|max의 시간복잡도 O(N), 진짜 최악의경우|  
+|59|MissingInteger|코딜리티|array||  
+|60|PermCheck|코딜리티|array||  
+|61|CountDiv|코딜리티|PrefixSums||    
+
+
+
 
 ~~|54|풍선터트리기|프로그래머스|중|~~
 ~~|55|섬연결하기|프로그래머스|중|~~   
@@ -119,7 +125,9 @@ confer : sys.stdin.readline(), sys.stdin.write()
 2021-03-12 : 야근지수, ~~풍선터트리기, 섬연결하기  ~~
 2021-03-13 : 네이버 코딩테스트  
 2021-03-14 : 아기상어(재도전요)  
-2021-03-16 : FrogJmp,PermMissingElem,TapeEquilibrium(시간복잡도),MaxCounters(진짜 최악으로만 구성된 경우), FrogRiverOne    
+2021-03-16 : FrogJmp,PermMissingElem,TapeEquilibrium(시간복잡도),MaxCounters(진짜 최악으로만 구성된 경우), FrogRiverOne  
+2021-03-17 : MissingInteger, PermCheck  
+2021-03-19 : CountDiv  
 
 
 
