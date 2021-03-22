@@ -122,7 +122,7 @@ confer : sys.stdin.readline(), sys.stdin.write()
 2021-03-06 : stdout.write()가 print보다 빠르다고함. ACM Craft(못품), 퇴사2(완료), 집합  
 2021-03-07 : 홈방범서비스  
 2021-03-09 : 포도주, 주사위 굴리기, 큐빙(실패), 이진검색, MinMaxDivision(실패)     
-2021-03-10 : Cyclic rotation, 암호만들기, 가장 큰 증가하는 부분 수열, 이동
+2021-03-10 : Cyclic rotation, 암호만들기, 가장 큰 증가하는 부분 수열, 이동  
 2021-03-11 : OddOccurrencesInArray, 평범함배낭 재도전(실패.. 왜 2차원 배열을 쓰는지 알게됬음),연구소  
 2021-03-12 : 야근지수, ~~풍선터트리기, 섬연결하기  ~~
 2021-03-13 : 네이버 코딩테스트  
