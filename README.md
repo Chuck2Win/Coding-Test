@@ -65,6 +65,8 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |59|MissingInteger|코딜리티|array||  
 |60|PermCheck|코딜리티|array||  
 |61|CountDiv|코딜리티|PrefixSums||    
+|62~66|스코페2021|스코페|DP,BFS,구현||    
+|66|팝업스토어|스코페|DP||
 
 
 
@@ -128,6 +130,9 @@ confer : sys.stdin.readline(), sys.stdin.write()
 2021-03-16 : FrogJmp,PermMissingElem,TapeEquilibrium(시간복잡도),MaxCounters(진짜 최악으로만 구성된 경우), FrogRiverOne  
 2021-03-17 : MissingInteger, PermCheck  
 2021-03-19 : CountDiv  
+2021-03-20 : 스코페2021(4솔)    
+2021-03-21 : 스코페2021(5번)  
+2021-03-23 : 스코페2021(6번)  
 
 
 
