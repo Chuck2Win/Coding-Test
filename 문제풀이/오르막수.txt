@@ -1,0 +1,14 @@
+# 백준 11057 오르막수
+N = int(input())
+table=[[0 for _ in range(11)] for _ in range(N+1)]
+for i in range(11):
+    table[1][i]=1
+
+table[1][0]=0
+
+
+for i in range(2,N+1):
+    table[i][1]=sum(table[i-1])
+    for j in range(2,11):
+        table[i][j]=table[i][j-1]-table[i-1][j-1]
+print(sum(table[-1])%10007)
