@@ -1,0 +1,87 @@
+
+def move(i_th_data):
+    r,c,n,d = i_th_data
+    if d==1:
+        r,c = r-1,c
+    elif d==2:
+        r,c = r+1,c
+    elif d==3:
+        r,c = r,c-1
+    else:
+	    r,c = r,c+1
+    return (r,c,n,d)
+
+def update(new_next):
+    r,c,n,d = new_next
+    if r==0 or r==(N-1) or c==0 or c==(N-1): # 벽
+        n = n//2
+        if n!=0:
+            if d==1:
+                d=2
+            elif d==2:
+                d=1
+            elif d==3:
+                d=4
+            else:
+                d=3
+            if Map.get((r,c)):
+                Map[(r,c)].append((n,d))
+            else:
+                Map[(r,c)]=[(n,d)]
+        
+    else:
+        if Map.get((r,c)):
+            Map[(r,c)].append((n,d))
+        else:
+            Map[(r,c)]=[(n,d)]
+        
+
+def solution():
+    #global status
+    global Map
+    t=0
+    while status:
+        # 이동
+        Map = {}
+        #print(status)
+       # print(t)
+        #print('\n')
+        for _ in range(len(status)):
+            next = status.popleft()
+            #print('hhh')
+            new_next=move(next)
+            
+            update(new_next)
+            
+            new_status=[]
+            
+        for i in Map.keys():
+            if len(Map[i])>1:
+                d = max(Map[i],key = lambda i:i[0])[1]
+                n = sum([i[0] for i in Map[i]])
+                status.append((i[0],i[1],n,d))
+            else:
+                status.append((i[0],i[1],Map[i][0][0],Map[i][0][1]))
+        
+            
+        t+=1
+        # print(t)
+        
+        if t==M:
+            #print(Map)
+            return sum([i[2] for i in status])
+
+
+
+
+from collections import deque
+T = int(input())
+# 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
+for test_case in range(1, T + 1):
+    N,M,K = map(int,input().split())
+    status = deque([])
+    for i in range(K):
+        r,c,n,d = map(int,input().split())
+        status.append((r,c,n,d))
+    print('#%d %d'%(test_case,solution()))
+    
