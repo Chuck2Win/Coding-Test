@@ -75,7 +75,7 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |72|미생물|SWEA|시뮬레이션|주어진 조건 중에서 작은 것으로 반복문을 돌려라|  
 |73|Distinct|Codility|정렬|카운팅정렬 느낌으로 접근|  
 |74|MaxProductOfThree|Codility|정렬||    
-
+NumberOfDiscIntersections  
 ~~|54|풍선터트리기|프로그래머스|중|~~
 ~~|55|섬연결하기|프로그래머스|중|~~   
 
@@ -145,7 +145,7 @@ confer : sys.stdin.readline(), sys.stdin.write()
 2021-03-24 : 오르막수, 테트로미노  
 2021-03-26 : 사다리 조작  
 2021-03-28 : 미생물 분리, 사다리 조작, 아기상어  
-2021-04-02 : 무려 5일만에 복귀.. ㅠㅠ 코딜리티, BRACKET(stack), Distinct,   
+2021-04-02 : 무려 5일만에 복귀.. ㅠㅠ 코딜리티, BRACKET(stack), Distinct, MaxProductOfThree    
 
 
 
