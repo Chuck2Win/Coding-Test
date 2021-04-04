@@ -1,0 +1,32 @@
+# Fish
+from collections import deque
+def solution(A, B):
+    answer=[]
+    down = deque()
+    up = deque()
+    for i in range(len(A)):
+        if B[i]==1:
+            down.append(A[i])
+        else:
+            if down:
+                #up.append(A[i])
+                while down: #and up:
+                    d = down.pop()
+                    #u = up.popleft()
+                    if A[i]>d:
+                        continue
+                    else:
+                        down.append(d)
+                        break
+                if down:
+                    continue
+                else:
+                    answer.append(A[i])
+            else:
+                answer.append(A[i])
+    #print(up)
+    #print(down)
+    #print(answer)
+    answer.extend(list(up))
+    answer.extend(list(down))
+    return len(answer)
