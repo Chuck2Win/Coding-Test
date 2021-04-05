@@ -75,6 +75,10 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |72|미생물|SWEA|시뮬레이션|주어진 조건 중에서 작은 것으로 반복문을 돌려라|  
 |73|Distinct|Codility|정렬|카운팅정렬 느낌으로 접근|  
 |74|MaxProductOfThree|Codility|정렬||    
+|75|Triangle|Codility|정렬||  
+|76|Fish|Codility|stack||  
+|77|Nesting|Codility|stack||    
+|78|Brackets|Codility|stack||      
 NumberOfDiscIntersections  
 ~~|54|풍선터트리기|프로그래머스|중|~~
 ~~|55|섬연결하기|프로그래머스|중|~~   
@@ -107,7 +111,7 @@ NumberOfDiscIntersections
 |57|아기상어|백준16236|BFS+시뮬레이션|문제 3번 읽자|  
 |67|구슬 탈출 2|백준 14503|시뮬+BFS|접근 잘못하니 노답이네.. 30분/30분/30분|  
 |71|사다리 조작|백준 15684|DFS+구현|구현을 어떤 자료형으로?|  
-|74|Bracket|코딜리티|Stack|ㅠㅠ|  
+|78|Bracket|코딜리티|Stack|ㅠㅠ|  
 
 ## diary  
 
@@ -145,7 +149,8 @@ NumberOfDiscIntersections
 2021-03-24 : 오르막수, 테트로미노  
 2021-03-26 : 사다리 조작  
 2021-03-28 : 미생물 분리, 사다리 조작, 아기상어  
-2021-04-02 : 무려 5일만에 복귀.. ㅠㅠ 코딜리티, BRACKET(stack), Distinct, MaxProductOfThree    
+2021-04-02 : 무려 5일만에 복귀.. ㅠㅠ 코딜리티, BRACKET(stack), Distinct, MaxProductOfThree   
+2021-04-05 : Bracket, Triangle, Fish, Nesting  
 
 
 
