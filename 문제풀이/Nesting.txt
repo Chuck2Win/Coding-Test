@@ -1,0 +1,17 @@
+from collections import deque
+def solution(S):
+    # write your code in Python 3.6
+    stack = deque()
+    for i in S:
+        if i=='(':
+            stack.append(i)
+        else:
+            if stack:
+                next = stack.pop()
+
+            else:
+                return 0
+    if stack:
+        return 0
+    else:
+        return 1
