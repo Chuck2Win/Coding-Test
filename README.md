@@ -91,7 +91,7 @@ NumberOfDiscIntersections
 
 
 
-## 다시 풀 문제(오답) ☑️
+## 다시 풀 문제(중요, 오답) ☑️
 |No|문제명|비고|다시풀어보기|
 |:---:|:---:|:---:|:---:|
 |28|가장 높은 탑 쌓기|백준2655||도전|
@@ -112,6 +112,7 @@ NumberOfDiscIntersections
 |67|구슬 탈출 2|백준 14503|시뮬+BFS|접근 잘못하니 노답이네.. 30분/30분/30분|  
 |71|사다리 조작|백준 15684|DFS+구현|구현을 어떤 자료형으로?|  
 |78|Bracket|코딜리티|Stack|ㅠㅠ|  
+|79|StoneWall|Codility|stack의 끝판왕+수리적마인드||     
 
 ## diary  
 
@@ -150,7 +151,9 @@ NumberOfDiscIntersections
 2021-03-26 : 사다리 조작  
 2021-03-28 : 미생물 분리, 사다리 조작, 아기상어  
 2021-04-02 : 무려 5일만에 복귀.. ㅠㅠ 코딜리티, BRACKET(stack), Distinct, MaxProductOfThree   
-2021-04-05 : Bracket, Triangle, Fish, Nesting  
+2021-04-05 : Bracket, Triangle, Fish, Nesting, Topological sort 정리    
+2021-04-06 : StoneWall(못품.. stack과 수리적 마인드의 끝판왕)  
+
 
 
 
