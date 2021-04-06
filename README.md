@@ -113,6 +113,7 @@ NumberOfDiscIntersections
 |71|사다리 조작|백준 15684|DFS+구현|구현을 어떤 자료형으로?|  
 |78|Bracket|코딜리티|Stack|ㅠㅠ|  
 |79|StoneWall|Codility|stack의 끝판왕+수리적마인드||     
+|80|NumberOfDiscIntersections|Codility|sort?||       
 
 ## diary  
 
