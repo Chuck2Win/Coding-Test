@@ -77,8 +77,8 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |74|MaxProductOfThree|Codility|정렬||    
 |75|Triangle|Codility|정렬||  
 |76|Fish|Codility|stack||  
-|77|Nesting|Codility|stack||    
-|78|Brackets|Codility|stack||      
+|77|Nesting|Codility|stack||      
+|78|Brackets|Codility|stack||        
 NumberOfDiscIntersections  
 ~~|54|풍선터트리기|프로그래머스|중|~~
 ~~|55|섬연결하기|프로그래머스|중|~~   
