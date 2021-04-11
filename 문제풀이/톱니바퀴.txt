@@ -1,0 +1,87 @@
+def score(Map):
+    s1,s2,s3,s4=0,0,0,0
+    if Map[0][0]==1:
+        s1=1
+    if Map[1][0]==1:
+        s2=2
+    if Map[2][0]==1:
+        s3=4
+    if Map[3][0]==1:
+        s4=8
+    return sum([s1,s2,s3,s4])
+
+def check():
+    # 같으면 0 다르면 1
+    check_between=[1,1,1]
+    if Map[0][2]==Map[1][6]:
+        check_between[0]=0    
+    if Map[1][2]==Map[2][6]:
+        check_between[1]=0
+    if Map[2][2]==Map[3][6]:
+        check_between[2]=0
+    return check_between
+
+def make_new_map(num,direction):
+    if direction == 1:
+        x=Map[num].pop()
+        Map[num]=[x]+Map[num]
+    elif direction == -1:
+        x=Map[num].pop(0)
+        Map[num]=Map[num]+[x]
+
+def check_direction(n,direction):
+    check_list=[0,0,0,0]
+    check_list[n-1]=direction
+    cf = check()
+    if n==1:
+        for i in range(1,4):
+            if cf[i-1]==0:
+                check_list[i]=0
+            else: # 다르면
+                check_list[i]=-1*check_list[i-1]
+    
+    elif num==2:
+        if cf[0]==0:
+            check_list[0]=0
+        else:
+            check_list[0]=-1*direction
+        for i in range(2,4):
+            if cf[i-1]==0:
+                check_list[i]=0
+            else:
+                check_list[i]=-1*check_list[i-1]
+    elif num==3:
+        if cf[-1]==0:
+            check_list[-1]=0
+        else:
+            check_list[-1]=-1*direction
+        
+        for i in range(1,-1,-1):
+            if cf[i]==0:
+                check_list[i]=0
+            else:
+                check_list[i]=-1*check_list[i+1]
+    else:
+        for i in range(2,-1,-1):
+            if cf[i]==0:
+                check_list[i]=0
+                
+            else:
+                check_list[i]=-1*check_list[i+1]
+    
+    return check_list
+
+def step(num,direction):
+    check_list=check_direction(num,direction)
+    for i in range(4):
+        make_new_map(i,check_list[i])  
+ 
+
+Map = []
+for i in range(4):
+    Map.append(list(map(int,list(input()))))
+K = int(input())
+for i in range(K):
+    num,direction = map(int,input().split())
+    step(num,direction)
+print(score(Map))
