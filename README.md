@@ -78,7 +78,10 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |75|Triangle|Codility|정렬||  
 |76|Fish|Codility|stack||  
 |77|Nesting|Codility|stack||      
-|78|Brackets|Codility|stack||        
+|78|Brackets|Codility|stack||  
+|79|톱니바퀴|백준14891|시뮬레이션||     
+
+
 NumberOfDiscIntersections  
 ~~|54|풍선터트리기|프로그래머스|중|~~
 ~~|55|섬연결하기|프로그래머스|중|~~   
@@ -154,7 +157,7 @@ NumberOfDiscIntersections
 2021-04-02 : 무려 5일만에 복귀.. ㅠㅠ 코딜리티, BRACKET(stack), Distinct, MaxProductOfThree   
 2021-04-05 : Bracket, Triangle, Fish, Nesting, Topological sort 정리    
 2021-04-06 : StoneWall(못품.. stack과 수리적 마인드의 끝판왕)  
-
+2021-04-11 : 톱니바퀴(시뮬레이션,idx 주의하자)  
 
 
 
