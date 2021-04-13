@@ -1,0 +1,85 @@
+N, M = map(int,input().split())
+Map = []
+for i in range(N):
+    Map.append(list(map(int,input().split())))
+
+
+from collections import deque
+def dfs_comb(cnt):
+    if cnt==(M+1):
+        return 
+    else:
+        for r in range(N):
+            for c in range(N):
+                if Map[r][c]==2:
+                    Map[r][c]=0
+                    dfs_comb(cnt+1)
+                    Map[r][c]=2
+
+def dfs_mine():
+    visited=[]
+    next_visit=deque([])
+    twos=[]
+    for i in range(N):
+        for j in range(N):
+            if Map[i][j]==2:
+                #next_visit.append([(i,j)])
+                twos.append((i,j))
+    for i in range(len(twos)-M+1):
+        next_visit.append([i])
+    while next_visit:
+        next = next_visit.pop()
+        if len(next)==M:
+            coord = []
+            for i in next:
+                coord.append(twos[i])
+            visited.append(coord)
+        else:
+            for i in range(next[-1]+1,len(twos)):
+                next_visit.append(next+[i])
+    return visited
+
+
+
+def calc_dist(x,y):
+    result = abs(x[0]-y[0])+abs(x[1]-y[1])
+    return result
+
+def calc_chicken():
+    ones = []
+    twos = []
+    for i in range(N):
+        for j in range(N):
+            if Map[i][j]==1:
+                ones.append((i,j))
+            elif Map[i][j]==2:
+                twos.append((i,j))
+    result = []
+    for x in ones:
+        dist = []
+        for y in twos:
+            dist.append(calc_dist(x,y))
+        #print(dist)
+        result.append(min(dist))
+    return sum(result)
+
+def solution():
+    answer = dfs_mine()
+    Answer = []
+    two = []
+    for i in range(N):
+        for j in range(N):
+            if Map[i][j]==2:
+                two.append((i,j))
+    for i in answer:
+        except_two = two.copy()
+        for j in i:
+            except_two.remove(j)
+        for x in except_two:
+            Map[x[0]][x[1]]=0
+        Answer.append(calc_chicken())
+        for x in except_two:
+            Map[x[0]][x[1]]=2
+    return min(Answer)
+
+print(solution())
