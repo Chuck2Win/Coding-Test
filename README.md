@@ -160,6 +160,8 @@ NumberOfDiscIntersections
 2021-04-06 : StoneWall(못품.. stack과 수리적 마인드의 끝판왕)  
 2021-04-11 : 톱니바퀴(시뮬레이션,idx 주의하자)  
 2021-04-13 : 치킨배달(DFS)  
+2021-04-14 : 월간 테스트 2.5솔 (구현, stack, queue)  
+2021-04-17 : mst, 다익스트라 정리(notion)  
 
 
 
