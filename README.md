@@ -80,7 +80,7 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |77|Nesting|Codility|stack||      
 |78|Brackets|Codility|stack||  
 |79|톱니바퀴|백준14891|시뮬레이션||   
-|80|치킨배달|백준15686|DFS||   
+|80|치킨배달|백준15686|DFS||  
 
 
 NumberOfDiscIntersections  
@@ -118,7 +118,7 @@ NumberOfDiscIntersections
 |78|Bracket|코딜리티|Stack|ㅠㅠ|  
 |79|StoneWall|Codility|stack의 끝판왕+수리적마인드||     
 |80|NumberOfDiscIntersections|Codility|sort?||       
-
+|81|활주로건설|SWEA 4014|시뮬레이션||  
 ## diary  
 
 2021-01-28 : 음계, 블랙잭, 스택수열  
@@ -162,6 +162,7 @@ NumberOfDiscIntersections
 2021-04-13 : 치킨배달(DFS)  
 2021-04-14 : 월간 테스트 2.5솔 (구현, stack, queue)  
 2021-04-17 : mst, 다익스트라 정리(notion)  
+2021-04-18 : 활주로 건설(못품)  
 
 
 
