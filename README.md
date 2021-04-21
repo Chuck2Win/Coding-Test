@@ -81,6 +81,8 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |78|Brackets|Codility|stack||  
 |79|톱니바퀴|백준14891|시뮬레이션||   
 |80|치킨배달|백준15686|DFS||  
+|81|문자열 압축|프로그래머스|구현||    
+|82|모두 0으로 만들기|프로그래머스|?||  
 
 
 NumberOfDiscIntersections  
@@ -163,6 +165,7 @@ NumberOfDiscIntersections
 2021-04-14 : 월간 테스트 2.5솔 (구현, stack, queue)  
 2021-04-17 : mst, 다익스트라 정리(notion)  
 2021-04-18 : 활주로 건설(못품)  
+2021-04-21 : 문자열압축, 모두 0으로 만들기  
 
 
 
