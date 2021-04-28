@@ -82,7 +82,7 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |79|톱니바퀴|백준14891|시뮬레이션||   
 |80|치킨배달|백준15686|DFS||  
 |81|문자열 압축|프로그래머스|구현||    
-|82|모두 0으로 만들기|프로그래머스|?||  
+|83|튜플|프로그래머스|?||  
 
 
 NumberOfDiscIntersections  
@@ -121,6 +121,8 @@ NumberOfDiscIntersections
 |79|StoneWall|Codility|stack의 끝판왕+수리적마인드||     
 |80|NumberOfDiscIntersections|Codility|sort?||       
 |81|활주로건설|SWEA 4014|시뮬레이션||  
+|82|모두 0으로 만들기|프로그래머스|?||  
+
 ## diary  
 
 2021-01-28 : 음계, 블랙잭, 스택수열  
@@ -166,6 +168,7 @@ NumberOfDiscIntersections
 2021-04-17 : mst, 다익스트라 정리(notion)  
 2021-04-18 : 활주로 건설(못품)  
 2021-04-21 : 문자열압축, 모두 0으로 만들기  
+2021-04-26 : 튜플
 
 
 
