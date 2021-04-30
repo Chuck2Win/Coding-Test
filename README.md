@@ -86,6 +86,7 @@ confer : sys.stdin.readline(), sys.stdin.write()
 |84|크레인 인형 뽑기|프로그래머스|구현||  
 |85|수식최대화|프로그래머스|구현||  
 |86|실패율|프로그래머스|정렬||    
+|87|입국심사|프로그래머스|정렬||    
 
 NumberOfDiscIntersections  
 ~~|54|풍선터트리기|프로그래머스|중|~~
@@ -124,6 +125,7 @@ NumberOfDiscIntersections
 |80|NumberOfDiscIntersections|Codility|sort?||       
 |81|활주로건설|SWEA 4014|시뮬레이션||  
 |82|모두 0으로 만들기|프로그래머스|?||  
+|87|징검다리 건너기|프로그래머스|이진탐색||      
 
 ## diary  
 
@@ -172,7 +174,7 @@ NumberOfDiscIntersections
 2021-04-21 : 문자열압축, 모두 0으로 만들기  
 2021-04-26 : 튜플  
 2021-04-29 : 수식최대화, 크레인 인형 뽑기  
-2021-04-30 : 실패율  
+2021-04-30 : 실패율, 입국 심사  
 
 
 
