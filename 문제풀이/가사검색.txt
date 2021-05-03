@@ -121,3 +121,77 @@ def solution(words, queries):
         real_answer.append(answer[dic[save_queries[i]]])
     
     return real_answer
+ # trial 2
+ def solution(words, queries):
+    # N, M
+    words = sorted(words,key = lambda i : len(i))
+    answer = []
+    save_queries = queries[:]
+    queries = list(set(queries))
+    dic = {i:queries.index(i) for i in save_queries}
+    for query in queries: 
+        l = len(query)
+        b = 0
+        e = len(words)-1
+        flag = False
+        while b<=e: # log(10^6+a)
+            mid = (b+e)//2
+            if len(words[mid]) == l:
+                start = mid
+                end = mid
+                while start>0: 
+                    if len(words[start-1])==l:
+                        start-=1
+                    else:
+                        break
+                while end<len(words):
+                    if len(words[end])==l:
+                        end+=1
+                    else:
+                        break
+                flag = True
+                break
+            else:
+                if len(words[mid]) > l:
+                    e = mid-1
+                elif len(words[mid]) < l:
+                    b = mid+1
+                    
+        if flag:
+            if query[0]=='?':
+                for i in range(l):
+                    if query[i]!='?':
+                        idx = i
+                        break
+                else:
+                    answer.append((end-start))
+                    continue
+                s = 0
+                
+                for i in range(start,end):
+                    if words[i].endswith(query[idx:]):
+                        s+=1
+                answer.append(s)
+
+
+            else:
+                for i in range(l):
+                    if query[i]=='?':
+                        idx = i
+                        break
+                s = 0
+                for i in range(start,end):
+                    if words[i].startswith(query[:idx]):
+                        s+=1
+                answer.append(s)
+            
+        else:
+
+            answer.append(0)
+#    return answer        
+            
+    real_answer = []
+    for i in range(len(save_queries)):
+        real_answer.append(answer[dic[save_queries[i]]])
+    
+    return real_answer
