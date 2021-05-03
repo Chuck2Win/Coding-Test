@@ -1,0 +1,53 @@
+#https://programmers.co.kr/learn/courses/30/lessons/60058
+from collections import deque
+def balanced(p):
+    open = 0
+    close = 0
+    check_idx = 0
+    for i in range(len(p)):
+        if p[i]=='(':
+            open+=1
+        else:
+            close+=1
+        if open == close:
+            check_idx = i
+            break
+    return i
+    
+def is_right(p):
+    stack = deque()
+    for i in range(len(p)):
+        if p[i]=='(':
+            stack.append(p[i])
+        else:
+            if stack:
+                next = stack.pop()
+            else:
+                return False
+    return True
+def solution(p):
+    if p=='':
+        return p
+    else:
+        if is_right(p):
+            return p
+        print(balanced(p))
+        u,v = p[:balanced(p)+1],p[balanced(p)+1:]
+        if is_right(u):
+            v = solution(v)
+            return u+v
+        else:
+            result = ''
+            #print(v)
+            v = solution(v)
+            #print(v)
+            result='('+v+')'
+            x=u[1:-1]
+            new_x = ''
+            for i in range(len(x)):
+                if x[i]=='(':
+                    new_x+=')'
+                else:
+                    new_x+='('
+            result+=new_x
+            return result
