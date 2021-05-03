@@ -1,0 +1,123 @@
+# def solution(words, queries):
+#     # N, M
+#     save_queries = queries.copy()
+#     words = sorted(words,key = lambda i : len(i))
+#     queries = list(set(queries))
+#     dic = {i:queries.index(i) for i in save_queries}
+#     words_length = list(map(len,words))
+#     answer = []
+#     for query in queries: # 10^6
+#         l = len(query)
+#         candi = []#deque()
+#         for i in range(len(words_length)): # N
+#             if words_length[i]==l:
+#                 candi.append(words[i])
+#             elif words_length[i]>l: # 살짝 빠르게 함/
+#                 break
+#         if candi:
+#             if query[0]=='?':
+#                 for i in range(l):
+#                     if query[i]!='?':
+#                         idx = i
+#                         break
+                
+#                 else:
+#                     answer.append(len(candi))
+#                     continue
+#                 check = query[idx:]
+#                 result = 0
+#                 for j in candi: # 10^6
+#                     if j[idx:]==check:
+#                         result+=1
+#                     #if j.endswith(check):
+#                     #    result+=1
+#                 answer.append(result)
+                    
+                
+                
+#             else:
+#                 for i in range(l):
+#                     if query[i]=='?':
+#                         idx = i
+#                         break
+#                 check = query[:idx]
+#                 result = 0
+#                 for j in candi:
+#                     if j[:idx]==check:
+#                     #if j.startswith(check):
+#                         result+=1
+#                 answer.append(result)
+#                 #print(check)
+#         else:
+#             answer.append(0)
+#     real_answer = []
+#     for i in range(len(save_queries)):
+#         real_answer.append(answer[dic[save_queries[i]]])
+    
+#     return real_answer
+def solution(words, queries):
+    # N, M
+    save_queries = queries.copy()
+    words = sorted(words,key = lambda i : len(i))
+    queries = list(set(queries))
+    m = min(queries,key = lambda i : len(i))
+    M = max(queries,key = lambda i : len(i))
+    
+    new_words = []
+    for i in range(len(words)):
+        if len(m)<=len(words[i])<=len(M):
+            new_words.append(words[i])
+            
+    words = new_words
+    words_length = list(map(len,words))
+    dic = {i:queries.index(i) for i in save_queries}
+    
+    answer = []
+    for query in queries: # 10^6
+        l = len(query)
+        if query[0]=='?':
+            for i in range(l):
+                if query[i]!='?':
+                    idx = i
+                    break
+
+            else:
+                answer.append(words_length.count(l))
+                continue
+            check = query[idx:]
+            result = 0
+            for j in words: # 10^6
+                if len(j)==l:
+                    if j[idx:]==check:
+                        result+=1
+                elif len(j)>l:
+                    break
+                #if j.endswith(check):
+                #    result+=1
+            answer.append(result)
+
+
+
+        else:
+            for i in range(l):
+                if query[i]=='?':
+                    idx = i
+                    break
+            check = query[:idx]
+            result = 0
+            for j in words:
+                if len(j)==l:
+                    if j[:idx]==check:
+                    #if j.startswith(check):
+                        result+=1
+                elif len(j)>l:
+                    break
+            answer.append(result)
+            #print(check)
+    else:
+        answer.append(0)
+    real_answer = []
+    for i in range(len(save_queries)):
+        real_answer.append(answer[dic[save_queries[i]]])
+    
+    return real_answer
