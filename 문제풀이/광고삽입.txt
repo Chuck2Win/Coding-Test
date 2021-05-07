@@ -1,0 +1,113 @@
+def tosec(time):
+    time = time.split(":")
+    time = 3600*int(time[0])+60*int(time[1])+int(time[-1])
+    return time
+
+def joint(ad,j):
+    if ad[1]<j[0]:
+        return 0
+    elif j[1]<ad[0]:
+        return 0
+    else:
+        k = [*ad,*j]
+        k = sorted(k)
+        return k[2]-k[1]
+
+def tostr(sec):
+    h = sec//3600
+    sec = sec%3600
+    m = sec//60
+    s=sec%60
+    if len(str(h))==1:
+        H = '0%d'%h
+    else:
+        H = '%d'%h
+    if len(str(m))==1:
+        M = '0%d'%m
+    else:
+        M = '%d'%m
+    if len(str(s))==1:
+        S = '0%d'%s
+    else:
+        S = '%d'%s
+    return H+':'+M+':'+S
+    
+def solution(play_time, adv_time, logs):
+    # 다 초로 변환
+    
+    if adv_time == play_time:
+        return "00:00:00"
+    
+    adv_time = tosec(adv_time)
+    play_time = tosec(play_time)
+    
+    Logs = []
+    sps = []
+    eps = []
+    for i in logs:
+        start,end = i.split('-')
+        start = tosec(start)
+        end = tosec(end)
+        Logs.append((start,end))
+        sps.append(start)
+        eps.append(end)
+    eps.append(play_time)
+    answer1 = []
+    sps = sorted(sps)
+    eps = sorted(eps)
+    for i in sps:
+        sp = i
+        ep = i+adv_time
+        
+        if ep>play_time:
+            answer1.append(0)
+            continue
+
+        else:
+            area = 0
+            ad = (sp,ep)
+            for j in Logs:
+                if joint(ad,j):
+                    area+=joint(ad,j)
+            answer1.append(area)
+    #print(sps)
+    m1 = max(range(len(answer1)),key = lambda i : answer1[i])
+    candi1=sps[m1]
+    #print(candi1)
+    #print(tostr(candi1))
+    answer2 = []
+    
+    for i in eps:
+        sp = i-adv_time
+        ep = i
+        
+        if sp<0:
+            answer2.append(0)
+            continue
+
+        else:
+            area = 0
+            ad = (sp,ep)
+            for j in Logs:
+                if joint(ad,j):
+                    area+=joint(ad,j)
+            answer2.append(area)
+    m2 = max(range(len(answer2)),key = lambda i : answer2[i])
+    #print(answer1)
+    #print(answer2)
+    #print(adv_time)
+    #print(eps)
+    if m2 == len(answer2)-1:
+        #print('?')
+        candi2 = play_time - adv_time
+    else:
+        #print(eps[m2])
+        candi2 = eps[m2]-adv_time
+    #print(answer1[m1])
+    #print(answer2[m2])
+    if answer1[m1]>answer2[m2]:
+        return tostr(candi2)
+    else:
+        return tostr(candi1)
+    #print(candi2)
+    #print(min(candi1,candi2))
