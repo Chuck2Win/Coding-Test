@@ -1,0 +1,33 @@
+https://programmers.co.kr/learn/courses/30/lessons/72411
+from collections import deque,Counter
+def dfs_comb(A,r):
+    visited = []
+    next_visit = deque([[i] for i in range(len(A)-r+1)])
+    while next_visit:
+        next = next_visit.pop()
+        if len(next)==r:
+            s = ''
+            for j in range(r):
+                s+=A[next[j]]
+            visited.append(s)
+        else:
+            for i in range(next[-1],len(A)):
+                if i not in next:
+                    next_visit.append(next+[i])
+    return visited
+def solution(orders, course):
+    answer = []
+    for r in course:
+        check = []
+        for order in orders:
+            if len(order)>=r:
+                check.extend(dfs_comb(sorted(list(order)),r))
+        if check:
+            c = Counter(check)
+            m = c.most_common(1)[0][1]
+            
+            if m>=2:
+                for key,value in c.items():
+                    if c[key]==m:
+                        answer.append(key)
+    return sorted(answer)
