@@ -1,0 +1,58 @@
+def solution(info, query):
+    answer = []
+    graph = {}
+    for i in range(len(info)):
+        x = info[i].split()
+        score = int(x[-1])
+        graph[i]=x[:-1]+[score]
+    orders = sorted(range(len(info)),key = lambda i : int(graph[i][-1]))
+    
+    #print(orders)
+    check_list = {'java':[],'python':[],'cpp':[],'backend':[],'frontend':[],'junior':[], 'senior':[], 'pizza':[],'chicken':[]
+                 }
+    for i in range(len(graph)):
+        if graph[i][0]=='java':
+            check_list['java'].append(i)
+        if graph[i][0]=='python':
+            check_list['python'].append(i)
+        if graph[i][0]=='cpp':
+            check_list['cpp'].append(i)
+        if graph[i][1]=='backend':
+            check_list['backend'].append(i)
+        if graph[i][1]=='frontend':
+            check_list['frontend'].append(i)
+        if graph[i][2]=='senior':
+            check_list['senior'].append(i)
+        if graph[i][2]=='junior':
+            check_list['junior'].append(i)
+        if graph[i][3]=='pizza':
+            check_list['pizza'].append(i)
+        if graph[i][3]=='chicken':
+            check_list['chicken'].append(i)
+    #print(check_list)
+    #print(orders)
+    for q in query: # Q
+        x=q.split()
+        x=[i for i in x if i!='and']
+        x=x[:-1]+[int(x[-1])]
+        start = 0
+        end = len(graph)-1
+        while start<=end: # log(N)
+            mid = (start+end)//2
+            if graph[orders[mid]][-1]<x[-1]:
+                start = mid+1
+            else:
+                end = mid-1
+        temp = orders[start:]
+        #total = graph[start:] # 개발언어, 직군, 경력, 소울푸드
+       # temp = list(range(len(info)))
+       # print(temp)
+        for _,i in enumerate(x[:-1]): # 개발언어, 직군, 경력, 소울푸드
+            new_temp = []
+            if i=='-':
+                continue
+            else:
+                #print(set(temp))
+                temp = set(temp).intersection(set(check_list[i]))
+        answer.append(len(temp))
+    return answer
