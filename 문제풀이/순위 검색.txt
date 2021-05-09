@@ -1,0 +1,88 @@
+from collections import deque
+# dfs_comb
+def dfs_comb(array,r):
+    # array = [0,1,2,3]
+    visited = []
+    next_visit = deque([[i] for i in range(len(array)-r+1)])
+    while next_visit:
+        next = next_visit.pop()
+        if len(next)==r:
+            visited.append(next)
+        else:
+            for i in range(next[-1],len(array)):
+                if i not in next:
+                    next_visit.append(next+[i])
+    return visited
+
+# binary search
+# 중복 O
+def binary_search(array,num):
+    start = 0
+    end = len(array)-1
+    while start<=end:
+        mid = (start+end)//2
+        if array[mid]<num:
+            start = mid + 1
+        else:
+            end = mid - 1
+        
+    return start
+
+
+# 미리 와꾸 만들어 놓기
+# info에서 5*10^4 * 16 = 8*10^5
+
+def solution(info, query):
+    list_up = {}
+    
+    for i in range(len(info)):
+        x=info[i].split()
+        x[-1]=int(x[-1])
+        list_up[i]=x # 개발언어, 직군, 경력, 소울푸드, 점수
+        
+    
+    Names = []
+    for j in range(1,5): # 1,2,3,4
+        names=dfs_comb(range(4),j)
+        Names.extend(names)
+    
+    pre_sets = {}
+    # 시간복잡도 8*10^6
+    for i in list_up:
+        name = "%s and %s and %s and %s"%(list_up[i][0],list_up[i][1],list_up[i][2],list_up[i][3])
+        if pre_sets.get(name):
+            pre_sets[name].append(list_up[i][-1])
+        else:
+            pre_sets[name]=[list_up[i][-1]]
+        # 15개 항목을 더 만듬
+        for Name in Names:
+            temp = list_up[i][:-1]
+            score = list_up[i][-1]
+            for j in Name:
+                temp[j]='-'
+            name = "%s and %s and %s and %s"%(temp[0],temp[1],temp[2],temp[3])
+            if pre_sets.get(name):
+                pre_sets[name].append(score)
+            else:
+                pre_sets[name]=[score]
+    for i in pre_sets:
+        pre_sets[i]=sorted(pre_sets[i])
+    # query
+    answer = []
+    for i in query:
+        q = i.split()
+        score = int(q[-1])
+        q = ' '.join(q[:-1])
+        # pre_sets에 key값이 있다면
+        #print(q)
+        if pre_sets.get(q):
+            # binary search
+            idx=binary_search(pre_sets[q],score)
+            #print(idx)
+            if idx == len(pre_sets[q]): 
+                answer.append(0)
+            else:
+                answer.append(len(pre_sets[q])-idx)
+        else:
+            answer.append(0)
+    return answer
