@@ -1,0 +1,34 @@
+from collections import deque
+import sys
+def topological_sort(graph,N):
+    visited = deque()
+    next_visit = deque()
+    in_degree = [0]*N
+    for i in range(N):
+        for j in graph[i]:
+            in_degree[j]+=1
+    # indegree가 0인 녀석
+    
+    for i in range(N):
+        if in_degree[i]==0:
+            next_visit.append(i)
+            
+
+    while next_visit:
+        
+        next = next_visit.popleft()
+        visited.append(next)
+        for i in graph[next]:
+            if in_degree[i]==0:
+                next_visit.append(i)
+    return visited
+# 줄 세우기
+import sys
+N,M = map(int,input().split())
+graph = {i:[] for i in range(N)}
+for i in range(M):
+    f,t = map(int,sys.stdin.readline().split())
+    graph[f-1].append(t-1)
+answer = topological_sort(graph,N)
+for i in answer:
+    print(i+1, end = ' ')
