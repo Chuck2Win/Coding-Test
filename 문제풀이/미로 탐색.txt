@@ -1,0 +1,30 @@
+# 백준 2178 미로 탐색
+# BFS
+import sys
+N,M = map(int,input().split())
+Map = []
+for i in range(N):
+    Map.append(list(map(int,list(input()))))
+from collections import deque
+def bfs(N,M,Map):
+    q = deque()
+    q.append((0,0))
+    t = 0
+    while q:
+        t+=1
+        for i in range(len(q)):
+            next = q.popleft()
+            #print(next)
+            if next == (N-1,M-1):
+                return t
+            r,c = next
+            
+            for dr,dc in [(1,0),(-1,0),(0,1),(0,-1)]:
+                new_r = r+dr
+                new_c = c+dc
+                if 0<=new_r<N and 0<=new_c<M:
+                    if Map[new_r][new_c]==1:
+                        q.append((new_r,new_c))
+                        Map[new_r][new_c]=2
+              
+print(bfs(N,M,Map))
