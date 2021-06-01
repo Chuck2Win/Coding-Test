@@ -1,0 +1,50 @@
+#  백준 4963 섬의 개수
+from collections import deque
+import copy
+
+def bfs(R,C,Map,start):
+    q = deque()
+    if Map[start[0]][start[1]]==2:
+        return q
+    q.append(start)
+    Map2 = copy.deepcopy(Map)
+    Map2[start[0]][start[1]]=2
+    land = deque()
+    while q:
+        for i in range(len(q)):
+            next = q.popleft()
+            #print(next)
+            land.append(next)
+            r,c = next
+            for dr,dc in [(1,0),(-1,0),(0,1),(0,-1),(1,-1),(-1,1),(1,1),(-1,-1)]:
+                new_r = r+dr
+                new_c = c+dc
+                #print(new_r,new_c)
+                if 0<=new_r<R and 0<=new_c<C:
+                    if Map2[new_r][new_c]==1:
+                        q.append((new_r,new_c))
+                        Map2[new_r][new_c]=2 # 방문했다 표시
+    return land
+
+def solution(R,C,Map,starts):
+    lands = []
+    for start in starts:
+        land = bfs(R,C,Map,start)
+        for i,j in land:
+            Map[i][j]=2
+        if land:
+            lands.append(land)
+    return len(lands)
+while True:
+    C,R = map(int,input().split())
+    if (C,R)==(0,0):
+        break
+    Map = []
+    for i in range(R):
+        Map.append(list(map(int,input().split())))
+    starts = []
+    for i in range(R):
+        for j in range(C):
+            if Map[i][j]==1:
+                starts.append((i,j))
+    print(solution(R,C,Map,starts))
